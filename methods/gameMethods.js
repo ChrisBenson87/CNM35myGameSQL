@@ -1,4 +1,3 @@
-const { argv } = require("yargs");
 const Game = require("../models/gameModel");
 
 exports.createGame = async (game) => {
@@ -14,12 +13,12 @@ exports.listGames = async () => {
     })
 }
 
-exports.updateGame = async () => {
+exports.updateGame = async (searchGame, replaceGame) => {
     await Game.update(replaceGame, {where: searchGame});
     console.log(`${searchGame.gameTitle} is updated`);
 }
 
-exports.deleteGame = async () => {
+exports.deleteGame = async (searchGame) => {
     await Game.destroy({where: searchGame});
-    console.log(`${searchgame.gameTitle} is deleted`);
+    console.log(`${searchGame.gameTitle} is deleted`);
 }

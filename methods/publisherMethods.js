@@ -1,4 +1,3 @@
-const { argv } = require("yargs");
 const Publisher = require("../models/publisherModel");
 
 exports.createPublisher = async(publisher) => {
@@ -14,12 +13,12 @@ exports.listPublishers = async () => {
     })
 }
 
-exports.updatePublisher = async () => {
+exports.updatePublisher = async (searchPublisher, replacePublisher) => {
     await Publisher.update(replacePublisher, {where: searchPublisher});
     console.log(`${searchPublisher.publisherName} is updated`);
 }
 
-exports.deletePublisher = async () => {
+exports.deletePublisher = async (searchPublisher) => {
     await Publisher.destroy({where: searchPublisher});
     console.log(`${searchPublisher.publisherName} is deleted`);
 }

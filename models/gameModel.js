@@ -2,11 +2,6 @@ const { DataTypes } = require("sequelize");
 const connection = require("../connection");
 
 const Game = connection.define("Game", {
-    gameID: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
     gameTitle: {
         type: DataTypes.STRING,
         allowNull: false

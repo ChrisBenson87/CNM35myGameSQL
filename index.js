@@ -25,13 +25,13 @@ const {createPublisher, listPublishers, updatePublisher, deletePublisher} = requ
         listPublishers();
     }
     else if(argv.updateGame){
-        searchGame = {gameTitle: argv.gameTitle, consoleRelease: argv.consoleRelease, releaseYear: argv.releaseYear};
-        replaceGame = {gameTitle: argv.gameTitle, consoleRelease: argv.consoleRelease, releaseYear: argv.releaseYear};
+        searchGame = {gameTitle: argv.gameTitle};
+        replaceGame = {gameTitle: argv.newGameTitle, consoleRelease: argv.newConsoleRelease, releaseYear: argv.newReleaseYear};
         await updateGame(searchGame, replaceGame);
     }
     else if(argv.updatePublisher){
         searchPublisher = {publisherName: argv.publisherName};
-        replacePublisher = {publisherName: argv.publisherName};
+        replacePublisher = {newPublisherName: argv.newPublisherName};
         await updatePublisher(searchPublisher, replacePublisher);
     }
     else if(argv.deleteGame){
