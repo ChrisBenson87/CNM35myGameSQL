@@ -31,7 +31,7 @@ const {createPublisher, listPublishers, updatePublisher, deletePublisher} = requ
     }
     else if(argv.updatePublisher){
         searchPublisher = {publisherName: argv.publisherName};
-        replacePublisher = {newPublisherName: argv.newPublisherName};
+        replacePublisher = {publisherName: argv.newPublisherName};
         await updatePublisher(searchPublisher, replacePublisher);
     }
     else if(argv.deleteGame){

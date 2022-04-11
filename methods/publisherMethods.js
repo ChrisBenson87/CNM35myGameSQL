@@ -2,7 +2,7 @@ const Publisher = require("../models/publisherModel");
 
 exports.createPublisher = async(publisher) => {
     await Publisher.create(publisher)
-    console.log(`Publisher has been added ${publisher.companyName}`)
+    console.log(`Publisher has been added ${publisher.publisherName}`)
 }
 
 exports.listPublishers = async () => {
